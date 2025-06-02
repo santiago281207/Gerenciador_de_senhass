@@ -5,24 +5,28 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 #include <time.h>
 #include <stdlib.h>
 #include <windows.h>
 
-int Check_Password_Strenght(char password[]);
-int PassValid(char senha[]);
-void Generate_Random_Password(char passwd[],int comp);
 
+int EntreAB(int n,int min,int max);
+int IsInString(char caracter,char string[]);    //Verifica se um caracter esta numa string
+int Check_Password_Strenght(char password[]);   
+int PassValid(char senha[]);    //Verificar se password e valida
+void Generate_Random_Password(char passwd[],int comp);  //Gerar password aleatoria
 
 
 
 int main()
 {
-    int comprimento_pass = 0;
-    char choice;
-    char senha[MAX_COMP_PASS+1];
-    char generated_password[MAX_COMP_PASS+1];
+    int criadas = 1;
+    int comprimento_pass = 0;   //Comprimento que o utilizador quiser a palavra passe aleatoria
+    char choice;    //Escolha do menu
+    char senha[MAX_COMP_PASS+1];    //Verificar senha
+    char generated_password[MAX_COMP_PASS+1];   //Senha randomizada
+    FILE* log;  //Ficheiro
+
 
     while(1)    //Ciclo que mantem sempre a correr
     {
